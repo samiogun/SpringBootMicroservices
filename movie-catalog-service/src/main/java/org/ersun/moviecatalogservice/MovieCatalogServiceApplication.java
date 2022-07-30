@@ -9,7 +9,8 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.reactive.function.client.WebClient;
 
 @SpringBootApplication
-@EnableEurekaClient  // Belirli bir versiyona kadar zorunlu fakat belirli bir versiyondan sonra pom.xml e dependenct ekleyip jar ların Classpath te olması yetiyor.
+@EnableEurekaClient
+// @EnableEurekaClient anotasyonu Belirli bir versiyona kadar zorunlu fakat belirli bir versiyondan sonra pom.xml e dependenct ekleyip jar ların Classpath te olması yetiyor.
 public class MovieCatalogServiceApplication {
 
     public static void main(String[] args) {

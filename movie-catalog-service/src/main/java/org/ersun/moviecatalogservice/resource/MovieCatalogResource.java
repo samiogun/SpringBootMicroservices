@@ -19,6 +19,9 @@ import java.util.stream.Collectors;
 @RequestMapping("/catalog")
 public class MovieCatalogResource {
 
+//    @Value("${abc}")
+//    String abc;
+
     @Autowired
     @Qualifier(value = "resttemplate")
     // İki tane RestTemplate tipinde bean imiz olduğu durumda @Qualifier anotasyonu ile hangi beani kullanmak istediğimizi belirtebiliriz. Bunun için @Bean anotasyonunu "value" özelliği atamamız gerekir.
@@ -39,6 +42,8 @@ public class MovieCatalogResource {
         UserRating userRating = restTemplate.getForObject("http://ratings-data-service/ratingsdata/users/" + userId, UserRating.class);
 
         // For each movie ID, call movie info service and get details
+
+//        System.out.println("abc : " + abc);
 
 
         return userRating.getRatings().stream().map(rating -> {
